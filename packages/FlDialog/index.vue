@@ -1,6 +1,7 @@
 <template>
   <el-dialog
     v-bind="$attrs"
+    :title="title"
     :visible.sync="dialogVisible"
     :width="width === 'mini' ? '300px' :
       width === 'small' ? '500px' :
@@ -37,6 +38,10 @@ export default {
   },
   props: {
     visible: Boolean,
+    title: {
+      type: String,
+      default: '',
+    },
     width: {
       type: String,
       default: 'small', // large | medium | small | mini
