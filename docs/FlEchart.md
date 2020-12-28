@@ -2,13 +2,13 @@
 
 - 使用方法
 ```
-<FlEchart :option="option"/>
+<FlEchart :options="options"/>
 ```
 
 ### FlEchart Attributes
 | 参数 | 说明 |	类型 | 默认值 |
 |:-|:-:|-:|-:|
-| option | 渲染echarts图表的值 | object | {} |
+| options | 渲染echarts图表的值 | object | {} |
 |||||
 
 ### FlEchart Events
