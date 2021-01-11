@@ -9,6 +9,7 @@
 | 参数 | 说明 |	类型 | 默认值 |
 |:-|:-:|-:|-:|
 | options | 渲染echarts图表的值 | object | {} |
+| isResize | 图表是否监听窗口变化而变化 | boolean | false |
 |||||
 
 ### FlEchart Events

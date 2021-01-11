@@ -13,6 +13,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    isResize: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -31,12 +35,22 @@ export default {
       this.$watch('options', (options) => {
         this.chart.setOption(options, true);
       }, { deep: true });
+      if (this.isResize) {
+        window.addEventListener('resize', this.resize);
+      }
     });
   },
   methods: {
+    resize() {
+      this.chart.resize();
+    },
     echartClick(params) {
       this.$emit('click', params);
     },
+  },
+  beforeDestroy() {
+    this.chart.clear();
+    this.isResize && window.removeEventListener('resize', this.resize);
   },
 };
 </script>
