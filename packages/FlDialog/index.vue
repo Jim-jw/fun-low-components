@@ -99,7 +99,7 @@ export default {
     },
     confirm() {
       if (this.confirmFn) {
-        this.cancelFn();
+        this.confirmFn();
       } else {
         this.dialogVisible = false;
       }
