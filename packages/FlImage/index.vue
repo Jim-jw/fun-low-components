@@ -1,8 +1,7 @@
 <template>
   <el-image
     v-bind="[$props, $attrs]"
-    @load="load"
-    @error="error">
+    v-on="$listeners">
     <slot name="error">
       <div slot="error" class="fl-image-error-slot">
         <i
@@ -40,14 +39,6 @@ export default {
     errorIconColor: {
       type: String,
       default: '#909399',
-    },
-  },
-  methods: {
-    load(e) {
-      this.$emit('load', e);
-    },
-    error(e) {
-      this.$emit('error', e);
     },
   },
 };

@@ -7,10 +7,7 @@
       width === 'small' ? '500px' :
       width === 'medium' ? '800px' :
       width === 'large' ? '1200px' : width"
-    @open="$emit('open')"
-    @opened="$emit('opened')"
-    @close="$emit('close')"
-    @closed="$emit('closed')">
+    v-on="$listeners">
     <slot name="title" slot="title"></slot>
     <slot></slot>
     <slot name="footer" slot="footer">

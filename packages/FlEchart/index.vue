@@ -49,8 +49,10 @@ export default {
     },
   },
   beforeDestroy() {
+    if (this.isResize) {
+      window.removeEventListener('resize', this.resize);
+    }
     this.chart.clear();
-    this.isResize && window.removeEventListener('resize', this.resize);
   },
 };
 </script>

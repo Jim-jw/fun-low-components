@@ -4,8 +4,7 @@
     :current-page="page"
     @size-change="handleSizeChange"
     @current-change="handleCurrentChange"
-    @prev-click="prevClick"
-    @next-click="nextClick">
+    v-on="$listeners">
     <slot/>
   </el-pagination>
 </template>
@@ -43,12 +42,6 @@ export default {
     handleCurrentChange(val) {
       this.$emit('update:page', val);
       this.$emit('page-change', val);
-    },
-    prevClick(val) {
-      this.$emit('prev-click', val);
-    },
-    nextClick(val) {
-      this.$emit('next-click', val);
     },
   },
 };

@@ -5,6 +5,7 @@
     :is="isButtonCheck ? 'ELCheckboxButton' : 'ElCheckbox'"
     :value="value"
     @change="change"
+    v-on="$listeners"
   >
     <slot/>
   </component>

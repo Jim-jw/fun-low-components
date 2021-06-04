@@ -3,14 +3,10 @@
     v-bind="[$props, $attrs]"
     :multiple="multiple"
     @change="change"
-    @visible-change="visibleChange"
-    @remove-tag="removeTag"
-    @clear="clear"
-    @blur="blur"
-    @focus="focus">
+    v-on="$listeners">
     <slot></slot>
     <template v-for="(item, index) in options">
-      <template v-if="typeof(item) !== 'object'">
+      <template v-if="isObject(item)">
         <el-option
           :label="item"
           :value="item"
@@ -80,20 +76,8 @@ export default {
       this.$emit('change-value', value);
       this.$emit('change', value);
     },
-    focus(e) {
-      this.$emit('focus', e);
-    },
-    blur(e) {
-      this.$emit('blur', e);
-    },
-    clear() {
-      this.$emit('clear');
-    },
-    removeTag(value) {
-      this.$emit('remove-tag', value);
-    },
-    visibleChange(visible) {
-      this.$emit('visible-change', visible);
+    isObject(item) {
+      return item && typeof (item) !== 'object';
     },
   },
 };
