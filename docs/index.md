@@ -9,3 +9,4 @@
 7. [文字链接组件](./FlLink.md)
 8. [文字提示组件](./FlTooltip.md)
 9. [弹窗组件](./FlDialog.md)
+10. [复制组件](./FlCopy.md)
