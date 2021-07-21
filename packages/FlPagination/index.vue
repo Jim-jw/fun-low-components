@@ -32,11 +32,10 @@ export default {
   },
   methods: {
     handleSizeChange(val) {
+      this.$emit('update:pageSize', val);
+      this.$emit('size-change', val);
       if (this.page !== 1) {
         this.handleCurrentChange(1);
-      } else {
-        this.$emit('update:pageSize', val);
-        this.$emit('size-change', val);
       }
     },
     handleCurrentChange(val) {
